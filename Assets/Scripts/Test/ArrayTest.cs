@@ -45,7 +45,7 @@ public class ArrayTest : MonoBehaviour
                 //if (i == j)
                 //    Debug.Log(array[i, j]);
 
-                //¼÷Á¦
+                //¼÷Á¦ 
                 if(i + cnt == j)
                 {
                     Debug.Log(array[i, j]);
