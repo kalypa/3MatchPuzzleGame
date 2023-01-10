@@ -361,10 +361,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79287be1205f7e48bac0cfcdb715049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blankSpritePrefab: {fileID: 379724993075810326, guid: 5b0252e102396ce4cabc563f326d03b0, type: 3}
-  blankSpriteHeight: 30
-  blankSpriteWidth: 10
+  blankSprPrefab: {fileID: 379724993075810326, guid: 5b0252e102396ce4cabc563f326d03b0, type: 3}
+  blankSprHeight: 30
+  blankSprWidth: 10
   blankHeader: 8
+  completeRows: 0
+--- !u!1 &593550982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593550983}
+  - component: {fileID: 593550984}
+  m_Layer: 0
+  m_Name: Ghost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593550983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593550982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593550984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593550982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68da8097d3c75c4f8606121ae97a1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &961761040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 961761041}
+  - component: {fileID: 961761042}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &961761041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961761040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457577180}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961761042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961761040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26781e6b43982bf45a2d39fc7203a863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curLevel: 1
+  linesPerLevel: 5
+  linesText: {fileID: 7498332261237503556}
+  levelText: {fileID: 1632594512542530786}
+  scoreText: {fileID: 1960801729933557654}
 --- !u!1 &1409619659
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +496,7 @@ MonoBehaviour:
   - {fileID: 7873747392389166647, guid: 3eb7eae22c968db4eb8e734f2e77b112, type: 3}
   - {fileID: 7059040913548934313, guid: 12daf3a17e8645d429607b1d1a19eafd, type: 3}
   - {fileID: -8783323352642365263, guid: 8da2ae81de30ce34a8b9d88a7800bcfe, type: 3}
+  gameBoard: {fileID: 0}
 --- !u!4 &1409619661
 Transform:
   m_ObjectHideFlags: 0
@@ -446,6 +541,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1889569609}
+  - {fileID: 961761041}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -594,7 +690,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036503d24dcf01a46afb2e195ae6137e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropIntervalRate: 0.8
+  dropIntervalRate: 0.5
+  keyRepeatRateLeftRight: 0.5
+  keyRepeatRateDown: 0.02
+  gameOverPanelObj: {fileID: 8315684475729859325}
 --- !u!1 &2133865293
 GameObject:
   m_ObjectHideFlags: 0

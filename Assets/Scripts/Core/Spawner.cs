@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     public Shape[] shapes;
-
+    public Board gameBoard;
     public Shape SpawnShape()
     {
         Shape shape = null;
